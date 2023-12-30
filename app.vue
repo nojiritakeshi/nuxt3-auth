@@ -7,6 +7,10 @@ const { signIn, token, data, status, lastRefreshedAt, signOut, getSession } =
 
 const username = ref("");
 const password = ref("");
+
+const signInPro = () => {
+  signIn({ username: username.value, password: password.value });
+};
 </script>
 
 <template>
@@ -15,7 +19,7 @@ const password = ref("");
     <pre>Data: {{ data || "no session data present, are you logged in?" }}</pre>
     <pre>Last refreshed at: {{ lastRefreshedAt || "no refresh happened" }}</pre>
     <pre>JWT token: {{ token || "no token present, are you logged in?" }}</pre>
-    <form @submit.prevent="signIn({ username, password })">
+    <form @submit.prevent="signInPro()">
       <input v-model="username" type="text" placeholder="Username" />
       <input v-model="password" type="password" placeholder="Password" />
       <button type="submit">sign in</button>
@@ -43,6 +47,10 @@ const password = ref("");
     </button>
     <br />
     <NuxtLink to="/login"> navigate to Login Page </NuxtLink>
+    <br />
+    <NuxtLink to="/sample"> go sample </NuxtLink>
+    <br />
+    <NuxtLink to="/"> go Home </NuxtLink>
     <NuxtPage />
   </div>
 </template>

@@ -31,11 +31,13 @@ export default defineNuxtConfig({
       enableRefreshOnWindowFocus: true,
 
       // Whether to refresh the session every `X` milliseconds. Set this to `false` to turn it off. The session will only be refreshed if a session already exists.
+      // 上記を日本語訳すると、
+      // ブラウザのウィンドウがフォーカスされるたびにセッションを更新するかどうか。 これをオフにするには、falseに設定します。 セッションが既に存在する場合のみ、セッションが更新されます。
       enableRefreshPeriodically: 5000,
     },
     globalAppMiddleware: {
       isEnabled: true,
-      addDefaultCallbackUrl: true,
+      // addDefaultCallbackUrl: true,
     },
   },
 });
